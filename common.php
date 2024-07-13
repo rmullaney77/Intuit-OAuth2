@@ -5,9 +5,9 @@ session_start();
 $base_url = 'https://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) . '/';
 
 $config = [
-    'client_id' => '',
-    'client_secret' => '',
-    'random_state' => '',
+    'client_id' => '', // App Client ID
+    'client_secret' => '', // App Client Secret
+    'random_state' => '', // Random value used to verify response data is legitimate
     'openid_mode' => 'test',  // 'test' or 'live'
     'oauth_endpoint' => 'https://appcenter.intuit.com/connect/oauth2',
     'token_endpoint' => 'https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer',
