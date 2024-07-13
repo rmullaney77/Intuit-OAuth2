@@ -1,1 +1,47 @@
-
+body {
+    background-color: #fff;
+    font-family: sans-serif;
+    font-size: 1rem;
+    color: #000;
+}
+h1 {
+    margin: .5rem 0;
+}
+code {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0 .125rem;
+    border-radius: .25rem;
+}
+img {
+    max-height:4rem;
+}
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+}
+pre {
+    overflow: auto;
+    font-size: .8rem;
+    padding: .5rem;
+    border-radius: .25rem;
+    background-color: #eee;
+}
+.alert {
+    padding: .5rem;
+    border-radius: .25rem;
+}
+.alert.error {
+    color: rgb(88, 21, 28);
+    background-color: rgb(248, 215, 218);
+    border: 1px solid rgb(241, 174, 181);
+}
+.alert.warning {
+    color: rgb(102, 77, 3);
+    background-color: rgb(255, 243, 205);
+    border: 1px solid rgb(255, 230, 156);
+}
+.alert.success {
+    color: rgb(10, 54, 34);
+    background-color: rgb(209, 231, 221);
+    border: 1px solid rgb(163, 207, 187);
+}
