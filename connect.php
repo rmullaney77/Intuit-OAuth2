@@ -20,7 +20,6 @@ switch (true) {
     default:
         if (!empty($_GET['error']) && $_GET['state'] == $_SESSION['csrf_token']) {
             $_SESSION['error'] = $_GET['error'];
-            unset($_SESSION['csrf_token']);
             break;
         } elseif (empty($_GET['code'])) {
             clearSession();
@@ -28,7 +27,6 @@ switch (true) {
             exit;
         } elseif ($_GET['state'] != $_SESSION['csrf_token']) {
             $_SESSION['error'] = 'State invalid.';
-            unset($_SESSION['csrf_token']);
             break;
         } elseif ($result = getAccessToken()) {
             updateSession($result);
