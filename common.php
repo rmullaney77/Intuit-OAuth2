@@ -48,7 +48,7 @@ function getAuthUrl(): string {
         'scope' => isset($_GET['openid']) ? $config['openid_scope'] : $config['oauth_scope'],
         'redirect_uri' => isset($_GET['openid']) ? $config['openid_redirect'] : $config['oauth_redirect'],
         'response_type' => 'code',
-        'state' => $config['random_state'],
+        'state' => $config['csrf_token'],
     ];
     
     return $config['oauth_endpoint'] . '?' . http_build_query($params, '', '&', PHP_QUERY_RFC1738);
