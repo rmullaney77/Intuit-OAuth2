@@ -40,6 +40,10 @@ function clearSession(): void {
     );
 }
 
+function csrfToken(): string {
+    return $_SESSION['csrf_token'] = bin2hex(random_bytes(16));
+}
+
 function getAuthUrl(): string {
     global $config;
     
@@ -48,7 +52,7 @@ function getAuthUrl(): string {
         'scope' => isset($_GET['openid']) ? $config['openid_scope'] : $config['oauth_scope'],
         'redirect_uri' => isset($_GET['openid']) ? $config['openid_redirect'] : $config['oauth_redirect'],
         'response_type' => 'code',
-        'state' => $config['csrf_token'],
+        'state' => csrfToken(),
     ];
     
     return $config['oauth_endpoint'] . '?' . http_build_query($params, '', '&', PHP_QUERY_RFC1738);
