@@ -205,6 +205,6 @@ function getUserInfo(): ?array {
         
         curl_close($curl);
     }
-	
+    
 	return null;
 }
