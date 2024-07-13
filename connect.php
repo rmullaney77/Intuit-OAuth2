@@ -18,15 +18,17 @@ switch (true) {
         }
         break;
     default:
-        if (!empty($_GET['error']) && $_GET['state'] == $config['csrf_token']) {
+        if (!empty($_GET['error']) && $_GET['state'] == $_SESSION['csrf_token']) {
             $_SESSION['error'] = $_GET['error'];
+            unset($_SESSION['csrf_token']);
             break;
         } elseif (empty($_GET['code'])) {
             clearSession();
             header('Location: ' . getAuthUrl());
             exit;
-        } elseif ($_GET['state'] != $config['csrf_token']) {
+        } elseif ($_GET['state'] != $_SESSION['csrf_token']) {
             $_SESSION['error'] = 'State invalid.';
+            unset($_SESSION['csrf_token']);
             break;
         } elseif ($result = getAccessToken()) {
             updateSession($result);
