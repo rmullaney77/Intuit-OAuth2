@@ -91,7 +91,7 @@ pre {
     <?php } ?>
 <?php } else { ?>
     <?php if (empty($config['client_id']) || empty($config['client_secret']) || empty($config['csrf_token'])) { ?>
-        <p class="alert error"><strong>Error:</strong> Missing <code>client_id</code>, <code>client_secret</code> or <code>random_state</code> in <code>common.php</code></p>
+        <p class="alert error"><strong>Error:</strong> Missing <code>client_id</code>, <code>client_secret</code> or <code>csrf_token</code> in <code>common.php</code></p>
     <?php } else { ?>
         <p><a href="<?php echo $config['oauth_redirect']; ?>"><img src="images/oauth.png" alt="Sign into QuickBooks using OAuth 2.0"></a></p>
         <p><a href="<?php echo $config['openid_redirect']; ?>"><img src="images/openid.jpg" alt="Sign into QuickBooks using OpenID"></a></p>
