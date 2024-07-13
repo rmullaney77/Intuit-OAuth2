@@ -4,10 +4,12 @@ session_start();
 
 $base_url = 'https://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) . '/';
 
+// Get your app's Client ID and Client Secret from Intuit's Developer Dashboard: https://developer.intuit.com/app/developer/dashboard
+
 $config = [
     'client_id' => '', // App Client ID
     'client_secret' => '', // App Client Secret
-    'random_state' => '', // Random string for validating connection responses
+    'csrf_token' => '', //  32 character string from high-quality random-string or password generator
     'openid_mode' => 'test',  // 'test' or 'live'
     'oauth_endpoint' => 'https://appcenter.intuit.com/connect/oauth2',
     'token_endpoint' => 'https://oauth.platform.intuit.com/oauth2/v1/tokens/bearer',
