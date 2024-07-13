@@ -90,7 +90,7 @@ pre {
     <p><a href="connect.php?openid">Connect</a></p>
     <?php } ?>
 <?php } else { ?>
-    <?php if (empty($config['client_id']) || empty($config['client_secret']) || empty($config['random_state'])) { ?>
+    <?php if (empty($config['client_id']) || empty($config['client_secret']) || empty($config['csrf_token'])) { ?>
         <p class="alert error"><strong>Error:</strong> Missing <code>client_id</code>, <code>client_secret</code> or <code>random_state</code> in <code>common.php</code></p>
     <?php } else { ?>
         <p><a href="<?php echo $config['oauth_redirect']; ?>"><img src="images/oauth.png" alt="Sign into QuickBooks using OAuth 2.0"></a></p>
