@@ -1,1 +1,1 @@
-Provided as an "easier to follow" integration example vs https://github.com/IntuitDeveloper/OAuth2_PHP
+An "easier to follow" example instead of the suggested https://github.com/IntuitDeveloper/OAuth2_PHP
