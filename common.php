@@ -40,7 +40,7 @@ function clearSession(): void {
 }
 
 function csrfToken(): string {
-    return $_SESSION['csrf_token'] = bin2hex(random_bytes(16));
+    return $_SESSION['csrf_token'] = bin2hex(function_exists('random_bytes') ? random_bytes(16) : openssl_random_pseudo_bytes(16));
 }
 
 function getAuthUrl(): string {
